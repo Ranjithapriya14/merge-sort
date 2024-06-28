@@ -1,0 +1,31 @@
+def ms(a):
+    print(a)
+    if len(a)>1:
+       mid=len(a)//2
+       lhalf=a[:mid]
+       rhalf=a[mid:]
+       ms(lhalf)
+       ms(rhalf)
+       i=0
+       j=0
+       k=0
+       while i<len(lhalf) and j<len(rhalf):
+         if lhalf[i]<rhalf[j]:
+            a[k]=lhalf[i]
+         i=i+1
+    else:
+       a[k]=rhalf[j]
+       j=j+1
+       k=k+1
+       while i<len(lhalf):
+         a[k]=lhalf[i]
+         i=i+1
+         k=k+1
+         while j<len(rhalf):
+           a[k]=rhalf[j]
+           j=j+1
+           k=k+1
+a=[14,8,9,5,814,1408,978]
+print(a)
+ms(a)
+print(a)
